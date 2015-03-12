@@ -5,6 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="~/styles.css" />
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -41,6 +43,7 @@
                 <asp:Parameter Name="ID" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
+        <span class="deleteRecipe"><asp:Label ID="lblDelete" runat="server"></asp:Label></span>
         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="ID" DataSourceID="SqlDataSourceDetailed" Height="50px" Width="125px">
             <Fields>
                 <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
