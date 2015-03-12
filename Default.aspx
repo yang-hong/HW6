@@ -30,7 +30,6 @@
             <Columns>
                 <asp:BoundField DataField="recipe_name" HeaderText="Recipe Name" ReadOnly="True" SortExpression="recipe_name" />
                 <asp:BoundField DataField="submitted_by" HeaderText="Submitted By" SortExpression="submitted_by" />
-                <asp:CommandField HeaderText="Submitted By" ShowSelectButton="True" />
             </Columns>
         </asp:GridView>
     
