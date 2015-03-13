@@ -7,7 +7,12 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="~/styles.css" />
 </head>
+
 <body>
+    <header>
+        <h1>Wicked Easy Recipe</h1>
+        <h3>Using 5 Ingredients or Less!</h3>
+    </header>
     <form id="form1" runat="server">
     <div>
     
@@ -29,15 +34,18 @@
 &nbsp;
         <asp:HyperLink ID="HyperLink_new" runat="server" NavigateUrl="~/DetailedViewNew.aspx">New Recipe</asp:HyperLink>
         &nbsp;
+        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink>
+&nbsp;
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/contact.aspx">Contact Us</asp:HyperLink>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource" PageSize="4" Width="453px" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" >
+        &nbsp;
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource" PageSize="4" Width="453px" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" >
             <Columns>
                 <asp:BoundField DataField="recipe_name" HeaderText="recipe_name" SortExpression="recipe_name" />
                 <asp:BoundField DataField="submitted_by" HeaderText="submitted_by" SortExpression="submitted_by" />
                 <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="DetailedView.aspx?ID={0}" Text="Select"  />
             </Columns>
-            <FooterStyle BackColor="coral" ForeColor="white" />
-            <HeaderStyle BackColor="yellow" Font-Bold="True" ForeColor="silver" />
+            <FooterStyle BackColor="#F08080" ForeColor="white" />
+            <HeaderStyle BackColor="#FFFF99" Font-Bold="True" ForeColor="silver" />
             <PagerStyle BackColor="coral" ForeColor="white" HorizontalAlign="Left" />
             <RowStyle BackColor="coral" ForeColor="white" />
             <SelectedRowStyle BackColor="coral" Font-Bold="True" ForeColor="white" />

@@ -1,5 +1,17 @@
 ﻿body {
     background-color:tan;
+    width:500px;
+    margin:0px auto;
+}
+
+.background {
+    background-color:white;
+    padding-left:100px;
+    padding-right:100px;
+    border-color:black;
+    border:solid;
+    border-width:thick;
+    width:80%;
 }
 
 .deleteRecipe{
@@ -10,4 +22,9 @@
 .table1{
     color:white;
     font-style:normal;
+}
+
+header{
+    margin-left:auto;
+    margin-right:auto;
 }
