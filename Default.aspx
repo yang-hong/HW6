@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="~/styles.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -27,11 +28,12 @@
         <asp:HyperLink ID="HyperLink_home" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
 &nbsp;
         <asp:HyperLink ID="HyperLink_new" runat="server" NavigateUrl="~/DetailedViewNew.aspx">New Recipe</asp:HyperLink>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource" PageSize="4" Width="453px">
+        &nbsp;
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource" PageSize="4" Width="453px" ControlStyle-BackColor="coral" >
             <Columns>
                 <asp:BoundField DataField="recipe_name" HeaderText="recipe_name" SortExpression="recipe_name" />
                 <asp:BoundField DataField="submitted_by" HeaderText="submitted_by" SortExpression="submitted_by" />
-                <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="DetailedView.aspx?ID={0}" Text="Select" />
+                <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="DetailedView.aspx?ID={0}" Text="Select"  />
             </Columns>
         </asp:GridView>
     

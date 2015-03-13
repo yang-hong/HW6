@@ -53,7 +53,7 @@
                           recipe_name:
                        </td>
                        <td style="text-align:left;">
-                           <asp:Label ID="Label1" runat="server" Text='<%# Bind("recipe_name") %>' />
+                           <asp:Textbox ID="Textbox1" runat="server" Text='<%# Bind("recipe_name") %>' />
                        </td>
                    </tr>
 
@@ -62,7 +62,7 @@
                           submitted_by:
                        </td>
                        <td style="text-align:left;"> 
-                           <asp:Label ID="Label2" runat="server" Text='<%# Bind("submitted_by") %>' />
+                           <asp:Textbox ID="Textbox2" runat="server" Text='<%# Bind("recipe_name") %>' />
                        </td>
                    </tr>
 
@@ -71,7 +71,7 @@
                          ingredient1:
                        </td>
                        <td style="text-align:left;">
-                           <asp:Label ID="Label3" runat="server" Text='<%# Bind("ingredient1") %>' />
+                           <asp:Textbox ID="Textbox3" runat="server" Text='<%# Bind("recipe_name") %>' />
                        </td>
                    </tr>
 
@@ -80,7 +80,7 @@
                           ingredient2:
                        </td>
                        <td style="text-align:left;">
-                           <asp:Label ID="Label4" runat="server" Text='<%# Bind("ingredient2") %>' />
+                           <asp:Textbox ID="Textbox4" runat="server" Text='<%# Bind("recipe_name") %>' />
                        </td>
                    </tr>
 
@@ -89,7 +89,7 @@
                           ingredient3:
                        </td>
                        <td style="text-align:left;">
-                          <asp:Label ID="Label5" runat="server" Text='<%# Bind("ingredient3") %>' />
+                          <asp:Textbox ID="Textbox5" runat="server" Text='<%# Bind("recipe_name") %>' />
                        </td>
                    </tr>
 
@@ -98,7 +98,7 @@
                           ingredient4:
                        </td>
                        <td style="text-align:left;">
-                           <asp:Label ID="Label6" runat="server" Text='<%# Bind("ingredient4") %>' />
+                           <asp:Textbox ID="Textbox6" runat="server" Text='<%# Bind("recipe_name") %>' />
                        </td>
                    </tr>
 
@@ -107,7 +107,7 @@
                           ingredient5:
                        </td>
                        <td style="text-align:left;">
-                           <asp:Label ID="Label7" runat="server" Text='<%# Bind("ingredient5") %>' />
+                           <asp:Textbox ID="Textbox7" runat="server" Text='<%# Bind("recipe_name") %>' />
                        </td>
                    </tr>
 
@@ -116,7 +116,7 @@
                           preparation:
                        </td>
                        <td style="text-align:left;"> 
-                           <asp:Label ID="Label8" runat="server" Text='<%# Bind("preparation") %>' />
+                           <asp:Textbox ID="Textbox8" runat="server" Text='<%# Bind("recipe_name") %>' />
                        </td>
                    </tr>
 
@@ -125,7 +125,7 @@
                           notes:
                        </td>
                        <td style="text-align:left;">
-                           <asp:Label ID="Label9" runat="server" Text='<%# Bind("notes") %>' />
+                           <asp:Textbox ID="Textbox9" runat="server" Text='<%# Bind("recipe_name") %>' />
                        </td>
                    </tr>
                </table>
@@ -237,9 +237,7 @@
                        <td style="text-align:left;">
                            <asp:Button ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
                        </td>
-                       <td style="text-align:left;">
-                           <asp:Button ID="LinkButton3" runat="server" CausesValidation="False" CommandName="New" Text="New" />
-                       </td>
+                      
                    </tr>
                     </div>
 
