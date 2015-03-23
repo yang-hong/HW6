@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>New Recipe</title>
     <link rel="stylesheet" type="text/css" href="~/styles.css" />
 </head>
  
@@ -68,7 +68,7 @@
                             <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("recipe_name") %>' />
 
                         </td>
-                        <td style="text-align:left">
+                        <td style="text-align:left; color:red;">
                             
                         </td>
                     </tr>

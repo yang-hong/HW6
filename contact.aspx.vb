@@ -22,7 +22,7 @@ Partial Class _default
         message = senderMessage.Text.ToString().Replace(Environment.NewLine, "<br />") 'keep text box formatting by replacing new lines (returns) with <br/>
 
 
-        msg.To.Add("yang-hong@uiowa.edu")  'destination email address
+        msg.To.Add("michael-colbert@uiowa.edu")  'destination email address
         msg.From = New MailAddress("ui.6k183@gmail.com")  'account used to send the email.
         msg.Subject = senderSubject.Text  'set the message subject line
         'msg.Body = senderMessage.Text  'get the message body from the textbox

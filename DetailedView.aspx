@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Recipe Detail</title>
     <link rel="stylesheet" type="text/css" href="~/styles.css" />
 
 </head>
@@ -67,6 +67,7 @@
                        </td>
                        <td style="text-align:left;">
                            <asp:Textbox ID="Textbox1" runat="server" Text='<%# Bind("recipe_name") %>' />
+                          
                        </td>
                    </tr>
 
@@ -75,7 +76,7 @@
                           submitted_by:
                        </td>
                        <td style="text-align:left;"> 
-                           <asp:Textbox ID="Textbox2" runat="server" Text='<%# Bind("recipe_name") %>' />
+                           <asp:Textbox ID="Textbox2" runat="server" Text='<%# Bind("submitted_by")%>' />
                        </td>
                    </tr>
 
@@ -84,7 +85,7 @@
                          ingredient1:
                        </td>
                        <td style="text-align:left;">
-                           <asp:Textbox ID="Textbox3" runat="server" Text='<%# Bind("recipe_name") %>' />
+                           <asp:Textbox ID="Textbox3" runat="server" Text='<%# Bind("ingredient1")%>' />
                        </td>
                    </tr>
 
@@ -93,7 +94,7 @@
                           ingredient2:
                        </td>
                        <td style="text-align:left;">
-                           <asp:Textbox ID="Textbox4" runat="server" Text='<%# Bind("recipe_name") %>' />
+                           <asp:Textbox ID="Textbox4" runat="server" Text='<%# Bind("ingredient2")%>' />
                        </td>
                    </tr>
 
@@ -102,7 +103,7 @@
                           ingredient3:
                        </td>
                        <td style="text-align:left;">
-                          <asp:Textbox ID="Textbox5" runat="server" Text='<%# Bind("recipe_name") %>' />
+                          <asp:Textbox ID="Textbox5" runat="server" Text='<%# Bind("ingredient3")%>' />
                        </td>
                    </tr>
 
@@ -111,7 +112,7 @@
                           ingredient4:
                        </td>
                        <td style="text-align:left;">
-                           <asp:Textbox ID="Textbox6" runat="server" Text='<%# Bind("recipe_name") %>' />
+                           <asp:Textbox ID="Textbox6" runat="server" Text='<%# Bind("ingredient4")%>' />
                        </td>
                    </tr>
 
@@ -120,7 +121,7 @@
                           ingredient5:
                        </td>
                        <td style="text-align:left;">
-                           <asp:Textbox ID="Textbox7" runat="server" Text='<%# Bind("recipe_name") %>' />
+                           <asp:Textbox ID="Textbox7" runat="server" Text='<%# Bind("ingredient5")%>' />
                        </td>
                    </tr>
 
@@ -129,7 +130,7 @@
                           preparation:
                        </td>
                        <td style="text-align:left;"> 
-                           <asp:Textbox ID="Textbox8" runat="server" Text='<%# Bind("recipe_name") %>' />
+                           <asp:Textbox ID="Textbox8" runat="server" Text='<%# Bind("preparation")%>' />
                        </td>
                    </tr>
 
@@ -138,7 +139,7 @@
                           notes:
                        </td>
                        <td style="text-align:left;">
-                           <asp:Textbox ID="Textbox9" runat="server" Text='<%# Bind("recipe_name") %>' />
+                           <asp:Textbox ID="Textbox9" runat="server" Text='<%# Bind("notes")%>' />
                        </td>
                    </tr>
                </table>
@@ -167,7 +168,7 @@
                        </td>
                        <td style="text-align:left;">
                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("recipe_name") %>' />
-                       </td>
+                           &nbsp;</td>
                    </tr>
 
                    <tr>
@@ -256,6 +257,7 @@
 
             </ItemTemplate>
         </asp:FormView>
+        &nbsp;&nbsp;&nbsp;&nbsp;
         </span>
     
     </div>
