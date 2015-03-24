@@ -7,9 +7,16 @@
     <title>Recipe Detail</title>
     <link rel="stylesheet" type="text/css" href="~/styles.css" />
 
+    <style type="text/css">
+        .auto-style1 {
+            height: 23px;
+        }
+    </style>
+
 </head>
 
 <body>
+    <div class="background">
     <header>
         <h1>Wicked Easy Recipe</h1>
         <h3>Using 5 Ingredients or Less!</h3>
@@ -22,8 +29,10 @@
 &nbsp;
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/contact.aspx">Contact Us</asp:HyperLink>
         &nbsp;
+        </div>
+    <br />
     <form id="form1" runat="server">
-    <div>
+        <div style="width: 625px">
     
         <asp:SqlDataSource ID="SqlDataSourceDetailed" runat="server" ConnectionString="<%$ ConnectionStrings:db_stateFacts %>" SelectCommand="SELECT [recipe_name], [submitted_by], [ingredient1], [ingredient2], [ingredient3], [ingredient4], [ingredient5], [preparation], [notes], [ID] FROM [yang_recipe] WHERE ([ID] = @ID)" DeleteCommand="DELETE FROM [yang_recipe] WHERE [ID] = @ID" InsertCommand="INSERT INTO [yang_recipe] ([recipe_name], [submitted_by], [ingredient1], [ingredient2], [ingredient3], [ingredient4], [ingredient5], [preparation], [notes]) VALUES (@recipe_name, @submitted_by, @ingredient1, @ingredient2, @ingredient3, @ingredient4, @ingredient5, @preparation, @notes)" UpdateCommand="UPDATE [yang_recipe] SET [recipe_name] = @recipe_name, [submitted_by] = @submitted_by, [ingredient1] = @ingredient1, [ingredient2] = @ingredient2, [ingredient3] = @ingredient3, [ingredient4] = @ingredient4, [ingredient5] = @ingredient5, [preparation] = @preparation, [notes] = @notes WHERE [ID] = @ID">
             <DeleteParameters>
@@ -57,40 +66,50 @@
             </UpdateParameters>
         </asp:SqlDataSource>
         <span class="deleteRecipe"><asp:Label ID="lblDelete" runat="server"></asp:Label>
-        <asp:FormView ID="FormView1" runat="server" DataKeyNames="ID" DataSourceID="SqlDataSourceDetailed">
+          <div class="body1">
+        <asp:FormView ID="FormView1" runat="server" DataKeyNames="ID" DataSourceID="SqlDataSourceDetailed" Width="417px" Height="276px">
             <EditItemTemplate>
                  <div class="table1">
                <table>
                    <tr>
-                       <td style="text-align:right; background-color:coral;">
-                          recipe_name:
+                       <td style="text-align:right; background-color:#F08080;">
+                          Recipe Name:
                        </td>
                        <td style="text-align:left;">
                            <asp:Textbox ID="Textbox1" runat="server" Text='<%# Bind("recipe_name") %>' />
                           
                        </td>
+                        <td style="text-align:left; color:red;">
+                           <asp:RequiredFieldValidator ID="rfv_name" runat="server" ErrorMessage="Please enter recipe name." ControlToValidate="Textbox1"></asp:RequiredFieldValidator>
+                       </td>
                    </tr>
 
                    <tr>
-                       <td style="text-align:right; background-color:coral;">
-                          submitted_by:
+                       <td style="text-align:right; background-color:#F08080;">
+                          Submitted By:
                        </td>
                        <td style="text-align:left;"> 
                            <asp:Textbox ID="Textbox2" runat="server" Text='<%# Bind("submitted_by")%>' />
                        </td>
+                         <td style="text-align:left; color:red;">
+                           <asp:RequiredFieldValidator ID="rfv_submitName" runat="server" ErrorMessage="Please enter your name." ControlToValidate="Textbox2"></asp:RequiredFieldValidator>
+                       </td>
                    </tr>
 
                     <tr>
-                       <td style="text-align:right; background-color:coral;">
+                       <td style="text-align:right; background-color:#F08080;">
                          ingredient1:
                        </td>
                        <td style="text-align:left;">
                            <asp:Textbox ID="Textbox3" runat="server" Text='<%# Bind("ingredient1")%>' />
                        </td>
+                         <td style="text-align:left; color:red;">
+                           <asp:RequiredFieldValidator ID="ref_ingredient1" runat="server" ErrorMessage="Please enter at least one ingredient." ControlToValidate="Textbox3"></asp:RequiredFieldValidator>
+                       </td>
                    </tr>
 
                     <tr>
-                       <td style="text-align:right; background-color:coral;">
+                       <td style="text-align:right; background-color:#F08080;">
                           ingredient2:
                        </td>
                        <td style="text-align:left;">
@@ -99,7 +118,7 @@
                    </tr>
 
                     <tr>
-                       <td style="text-align:right; background-color:coral;">
+                       <td style="text-align:right; background-color:#F08080;">
                           ingredient3:
                        </td>
                        <td style="text-align:left;">
@@ -108,7 +127,7 @@
                    </tr>
 
                     <tr>
-                       <td style="text-align:right; background-color:coral;">
+                       <td style="text-align:right; background-color:#F08080;">
                           ingredient4:
                        </td>
                        <td style="text-align:left;">
@@ -117,7 +136,7 @@
                    </tr>
 
                     <tr>
-                       <td style="text-align:right; background-color:coral;">
+                       <td style="text-align:right; background-color:#F08080;">
                           ingredient5:
                        </td>
                        <td style="text-align:left;">
@@ -126,16 +145,19 @@
                    </tr>
 
                     <tr>
-                       <td style="text-align:right; background-color:coral;">
+                       <td style="text-align:right; background-color:#F08080;">
                           preparation:
                        </td>
                        <td style="text-align:left;"> 
                            <asp:Textbox ID="Textbox8" runat="server" Text='<%# Bind("preparation")%>' />
                        </td>
+                         <td style="text-align:left; color:red;">
+                           <asp:RequiredFieldValidator ID="rqf_prep" runat="server" ErrorMessage="Please enter the preparation step." ControlToValidate="Textbox8"></asp:RequiredFieldValidator>
+                       </td>
                    </tr>
 
                     <tr>
-                       <td style="text-align:right; background-color:coral;">
+                       <td style="text-align:right; background-color:#F08080;">
                           notes:
                        </td>
                        <td style="text-align:left;">
@@ -155,6 +177,7 @@
                    </tr>
                 </div>
                 
+                
             </EditItemTemplate>
             <InsertItemTemplate>
                
@@ -163,8 +186,8 @@
                 <div class="table1">
                <table>
                    <tr>
-                       <td style="text-align:right; background-color:coral;">
-                          recipe_name:
+                       <td style="text-align:right; background-color:#F08080;">
+                           RecipeName:
                        </td>
                        <td style="text-align:left;">
                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("recipe_name") %>' />
@@ -172,16 +195,16 @@
                    </tr>
 
                    <tr>
-                       <td style="text-align:right; background-color:coral;">
-                          submitted_by:
+                       <td style="text-align:right; background-color:#F08080;" class="auto-style1">
+                           SubmittedBy:
                        </td>
-                       <td style="text-align:left;">
+                       <td style="text-align:left;" class="auto-style1">
                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("submitted_by") %>' />
                        </td>
                    </tr>
 
                     <tr>
-                       <td style="text-align:right; background-color:coral;">
+                       <td style="text-align:right; background-color:#F08080;">
                          ingredient1:
                        </td>
                        <td style="text-align:left;">
@@ -190,7 +213,7 @@
                    </tr>
 
                     <tr>
-                       <td style="text-align:right; background-color:coral;">
+                       <td style="text-align:right; background-color:#F08080;">
                           ingredient2:
                        </td>
                        <td style="text-align:left;">
@@ -199,7 +222,7 @@
                    </tr>
 
                     <tr>
-                       <td style="text-align:right; background-color:coral;">
+                       <td style="text-align:right; background-color:#F08080;">
                           ingredient3:
                        </td>
                        <td style="text-align:left;">
@@ -208,7 +231,7 @@
                    </tr>
 
                     <tr>
-                       <td style="text-align:right; background-color:coral;">
+                       <td style="text-align:right; background-color:#F08080;">
                           ingredient4:
                        </td>
                        <td style="text-align:left;">
@@ -217,7 +240,7 @@
                    </tr>
 
                     <tr>
-                       <td style="text-align:right; background-color:coral;">
+                       <td style="text-align:right; background-color:#F08080;">
                           ingredient5:
                        </td>
                        <td style="text-align:left;">
@@ -226,7 +249,7 @@
                    </tr>
 
                     <tr>
-                       <td style="text-align:right; background-color:coral;">
+                       <td style="text-align:right; background-color:#F08080;">
                           preparation:
                        </td>
                        <td style="text-align:left;">
@@ -235,7 +258,7 @@
                    </tr>
 
                     <tr>
-                       <td style="text-align:right; background-color:coral;">
+                       <td style="text-align:right; background-color:#F08080;">
                           notes:
                        </td>
                        <td style="text-align:left;">
@@ -257,10 +280,15 @@
 
             </ItemTemplate>
         </asp:FormView>
+              </div>
+              
+         
         &nbsp;&nbsp;&nbsp;&nbsp;
         </span>
     
     </div>
     </form>
+    <br /><br /><br /><br />
+    <footer>&copy; 2015. 6K:183 Software Design & Development</footer>
 </body>
 </html>

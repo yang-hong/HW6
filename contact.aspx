@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <div class="background">
     <header>
         <h1>Wicked Easy Recipe</h1>
         <h3>Using 5 Ingredients or Less!</h3>
@@ -22,23 +23,26 @@
 &nbsp;
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/contact.aspx">Contact Us</asp:HyperLink>
         &nbsp;
+        </div>
+    <div class="body1">
     <form id="form1" runat="server">
+
 
         <!-- Check to see if you are in postback.  If not, display the contact form. -->
         <% If Not IsPostBack Then%>
 
         Your name:<br />
-        <asp:TextBox ID="senderName" runat="server" placeholder="First and last name" ></asp:TextBox>
+        <asp:TextBox ID="senderName" runat="server" placeholder="First and last name" Width="253px" ></asp:TextBox>
         <br />
         <br />
 
         Your email address:<br />
-        <asp:TextBox ID="senderAddress" runat="server" placeholder="Preferred email address" ></asp:TextBox>
+        <asp:TextBox ID="senderAddress" runat="server" placeholder="Preferred email address" Width="250px" ></asp:TextBox>
         <br />
         <br />
        
         Your subject:<br />
-        <asp:TextBox ID="senderSubject" runat="server"></asp:TextBox>
+        <asp:TextBox ID="senderSubject" runat="server" Width="250px"></asp:TextBox>
         <br />
         <br />
 
@@ -48,7 +52,7 @@
         
         <br />
         <br />
-        <asp:Button ID="sendMail" runat="server" Text="Send" />
+        <asp:Button ID="sendMail" runat="server" Text="Send" Width="134px" />
 
         <!-- If you are in postback, display the confirmation label. -->
         <%Else%>
@@ -61,5 +65,8 @@
         <%End If%>
 
     </form>
+        </div>
+    <br /><br /><br /><br />
+    <footer>&copy; 2015. 6K:183 Software Design & Development</footer>
 </body>
 </html>

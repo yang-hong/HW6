@@ -9,6 +9,7 @@
 </head>
  
 <body>
+    <div class="background">
     <header>
         <h1>Wicked Easy Recipe</h1>
         <h3>Using 5 Ingredients or Less!</h3>
@@ -21,6 +22,7 @@
 &nbsp;
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/contact.aspx">Contact Us</asp:HyperLink>
         &nbsp;
+        </div>
     <form id="form1" runat="server">
     <div>
     
@@ -52,8 +54,8 @@
                 <asp:Parameter Name="ID" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        <br />
-        <asp:FormView ID="FormView1" runat="server" DataKeyNames="ID" DataSourceID="SqlDataSource1" DefaultMode="Insert">
+        <div class="body1">
+        <asp:FormView ID="FormView1" runat="server" DataKeyNames="ID" DataSourceID="SqlDataSource1" DefaultMode="Insert" Height="300px" Width="515px">
             <EditItemTemplate>
                 
             </EditItemTemplate>
@@ -61,46 +63,48 @@
                 <div class="table1">
                 <table>
                     <tr>
-                        <td style="text-align:right; background-color:coral; color:white;">
+                        <td style="text-align:right; background-color:#F08080; color:white;">
                             Recipe Name:
                         </td>
                         <td style="text-align:left;">
-                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("recipe_name") %>' />
+                            <asp:TextBox ID="TextBox1" runat="server"  Text='<%# Bind("recipe_name") %>' />
 
                         </td>
                         <td style="text-align:left; color:red;">
-                            
+                          
+                           <asp:RequiredFieldValidator ID="rfv_Name" runat="server" ErrorMessage="Please enter the recipe name." ControlToValidate="Textbox1"></asp:RequiredFieldValidator>
+                       
                         </td>
                     </tr>
 
 
                     <tr>
-                        <td style="text-align:right;background-color:coral; color:white;">
-                            submitted_by:
+                        <td style="text-align:right;background-color:#F08080; color:white;">
+                            Submitted By:
                         </td>
                         <td style="text-align:left;">
                             <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("submitted_by") %>' />
                         </td>
-                        <td style="text-align:left">
-                            
+                         <td style="text-align:left; color:red;">
+                            <asp:RequiredFieldValidator ID="rfv_submitName" runat="server" ErrorMessage="Please enter your name." ControlToValidate="Textbox2"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
 
                     <tr>
-                        <td style="text-align:right; background-color:coral; color:white;">
+                        <td style="text-align:right; background-color:#F08080; color:white;">
                             ingredient1:
                         </td>
                         <td style="text-align:left;">
                             <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("ingredient1") %>' />
                         </td>
-                        <td style="text-align:left">
-                            
+                        <td style="text-align:left; color:red;">
+                            <asp:RequiredFieldValidator ID="rfv_ingredient1" runat="server" ErrorMessage="Please enter at least one ingredient." ControlToValidate="Textbox3"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
 
 
                     <tr>
-                        <td style="text-align:right; background-color:coral; color:white;">
+                        <td style="text-align:right; background-color:#F08080; color:white;">
                             ingredient2:
                         </td>
                         <td style="text-align:left;">
@@ -111,7 +115,7 @@
 
 
                     <tr>
-                        <td style="text-align:right; background-color:coral; color:white;">
+                        <td style="text-align:right; background-color:#F08080; color:white;">
                             ingredient3:
                         </td>
                         <td style="text-align:left;">
@@ -123,7 +127,7 @@
 
 
                     <tr>
-                        <td style="text-align:right; background-color:coral; color:white;">
+                        <td style="text-align:right; background-color:#F08080; color:white;">
                             ingredient4:
                         </td>
                         <td style="text-align:left;">
@@ -135,7 +139,7 @@
 
 
                     <tr>
-                        <td style="text-align:right; background-color:coral; color:white;">
+                        <td style="text-align:right; background-color:#F08080; color:white;">
                             ingredient5:
                         </td>
                         <td style="text-align:left;">
@@ -147,7 +151,7 @@
 
 
                     <tr>
-                        <td style="text-align:right; background-color:coral; color:white;">
+                        <td style="text-align:right; background-color:#F08080; color:white;">
                             notes:
                         </td>
                         <td style="text-align:left;">
@@ -159,15 +163,15 @@
 
 
                    <tr>
-                        <td style="text-align:right; background-color:coral; color:white;">
+                        <td style="text-align:right; background-color:#F08080; color:white;">
                            preparation:
                         </td>
                         <td style="text-align:left;">
                             <asp:TextBox ID="TextBox9" runat="server" Text='<%# Bind("preparation") %>' />
 
                         </td>
-                       <td style="text-align:left">
-                            
+                        <td style="text-align:left; color:red;">
+                            <asp:RequiredFieldValidator ID="rqf_preparation" runat="server" ErrorMessage="Please enter your preparation step." ControlToValidate="Textbox9"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
 
@@ -187,9 +191,12 @@
                 
             </ItemTemplate>
         </asp:FormView>
+            </div>
     
     
     </div>
     </form>
+    <br /><br /><br /><br />
+    <footer>&copy; 2015. 6K:183 Software Design & Development</footer>
 </body>
 </html>

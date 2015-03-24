@@ -1,17 +1,31 @@
 ﻿body {
-    background-color:tan;
-    width:500px;
+    background-color:#D2B48C;
+    width:518px;
     margin:0px auto;
+    height: 353px;
 }
 
 .background {
-    background-color:white;
+   
     padding-left:100px;
     padding-right:100px;
-    border-color:black;
-    border:solid;
-    border-width:thick;
+
     width:80%;
+}
+
+.body1 {
+
+    padding-left:100px;
+    padding-right:100px;
+
+    width:66%;
+}
+
+.body2{
+    padding-left:0px;
+    padding-right:100px;
+
+    width:66%;
 }
 
 .deleteRecipe{
@@ -28,3 +42,16 @@ header{
     margin-left:auto;
     margin-right:auto;
 }
+
+
+th, td {
+     height: 40px;
+ } 
+
+footer{
+    padding-left:100px;
+    padding-right:100px;
+
+    width:66%;
+}
+
